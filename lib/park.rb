@@ -25,4 +25,10 @@ class Park
     adults * @admission_price
   end
 
+  def all_attendees
+    passengers.map do |passenger|
+      passenger.name
+    end.sort
+  end
+
 end
