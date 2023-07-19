@@ -28,4 +28,20 @@ describe Park do
     end
   end
 
+  describe "#list_passengers" do
+    rockies = Park.new("Rocky Mountains", 25)
+    honda = Vehicle.new("2001", "Honda", "Civic")
+    ford = Vehicle.new("2001", "Ford", "Fiesta")
+    charlie = Passenger.new({"name" => "Charlie", "age" => 18})  
+    jude = Passenger.new({"name" => "Jude", "age" => 20})  
+    it "returns a list of all passengers who entered the park" do
+      honda.add_passenger(charlie)
+      ford.add_passenger(jude)
+      rockies.admit_vehicle(honda)
+      rockies.admit_vehicle(ford)
+
+      expect(rockies.list_passengers).to eq([charlie, jude])
+    end
+  end
+
 end
