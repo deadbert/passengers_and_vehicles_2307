@@ -39,7 +39,7 @@ describe Park do
       ford.add_passenger(jude)
       rockies.admit_vehicle(honda)
       rockies.admit_vehicle(ford)
-
+      
       expect(rockies.list_passengers).to eq([charlie, jude])
     end
   end

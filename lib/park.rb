@@ -10,4 +10,11 @@ class Park
   def admit_vehicle(vehicle)
     @vehicles << vehicle
   end
+
+  def list_passengers
+    @vehicles.map do |vehicle|
+      vehicle.passengers
+    end.flatten
+  end
+  
 end
