@@ -7,14 +7,22 @@ class Park
     @vehicles = []
   end
 
-  def admit_vehicle(vehicle)
+  def add_vehicle(vehicle)
     @vehicles << vehicle
   end
 
-  def list_passengers
+  def passengers
     @vehicles.map do |vehicle|
       vehicle.passengers
     end.flatten
   end
-  
+
+  def revenue
+    adults = 0
+    @vehicles.each do |vehicle|
+      adults += vehicle.num_adults
+    end
+    adults * @admission_price
+  end
+
 end
