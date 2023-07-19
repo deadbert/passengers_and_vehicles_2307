@@ -22,9 +22,10 @@ describe Passenger do
   end
 
   describe "#drive?" do
+    charlie = Passenger.new({"name" => "Charlie", "age" => 18})  
     it "returns @driver for passenger" do
       
-      expect(charlie.drive?).to eq(false)
+      expect(charlie.driver?).to eq(false)
     end
   end
   describe "#drive" do
