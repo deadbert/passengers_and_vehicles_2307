@@ -17,4 +17,15 @@ describe Park do
     end
   end
 
+  describe "#admit_vehicle" do
+    rockies = Park.new("Rocky Mountains", 25)
+    vehicle = Vehicle.new("2001", "Honda", "Civic")  
+    it "Can admit vehicles to the park" do
+
+      expect(rockies.vehicles).to eq([])
+      rockies.admit_vehicle(vehicle)
+      expect(rockies.vehicles).to eq([vehicle])
+    end
+  end
+
 end
