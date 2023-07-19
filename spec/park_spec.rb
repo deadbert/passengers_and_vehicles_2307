@@ -62,4 +62,22 @@ describe Park do
     end
   end
 
+  describe "#all_attendees" do
+    rockies = Park.new("Rocky Mountains", 25)
+    honda = Vehicle.new("2001", "Honda", "Civic")
+    ford = Vehicle.new("2001", "Ford", "Fiesta")
+    charlie = Passenger.new({"name" => "Charlie", "age" => 18})  
+    jude = Passenger.new({"name" => "Jude", "age" => 20})  
+    taylor = Passenger.new({"name" => "Taylor", "age" => 12}) 
+    it "returns Array of strings with all attendees in the park sorted alphabetically" do
+      honda.add_passenger(charlie)
+      honda.add_passenger(taylor)
+      ford.add_passenger(jude)
+      rockies.add_vehicle(honda)
+      rockies.add_vehicle(ford)
+
+      expect(rockies.all_attendees).to eq(["Charlie", "Jude", "Taylor"])
+    end
+  end
+
 end
